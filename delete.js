@@ -2,6 +2,7 @@
 var Promise = require('bluebird');
 
 exports.delete = delete;
+
 function delete(req,res){
     Promise.coroutine(function*(){
         console.log('hello')
@@ -19,6 +20,7 @@ function deleteUser(email){
     return new Promise((resolve, reject)=>{
         connection.query('delete from CUSTOMER where EMAIL = ? ',[email], function (err, result) {
             if(err){
+                console.log("err", err);
                 reject(err);
             }
             resolve(result)
