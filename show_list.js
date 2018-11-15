@@ -6,9 +6,9 @@ exports.list=function(req,res){
   var  response = {
     FIRST_NAME:req.query.FIRST_NAME,
     LAST_NAME:req.query.LAST_NAME,
-    AGE:req.query.AGE,
+    FULL_NAME:req.query.FULL_NAME,
     EMAIL:req.query.EMAIL,
-    PASS:req.query.PASS
+    PASSWORD:req.query.PASSWORD
  };
  async.waterfall([
   function(callback){
@@ -21,8 +21,8 @@ exports.list=function(req,res){
 ],
   function(err,result){
       if(err){console.log(err)}
-      else{console.log(result);
-      res.end()
+      else{//console.log(result);
+      res.send(result);
      console.log('All Rows Printed')} 
   }
 ); 

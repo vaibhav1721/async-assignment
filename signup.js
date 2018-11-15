@@ -1,18 +1,17 @@
 module.exports.async= (async)=>{
 
     exports.add=function(req,res){
-        console.log('hello')
         var  response = {
           FIRST_NAME:req.query.FIRST_NAME,
           LAST_NAME:req.query.LAST_NAME,
-          AGE:req.query.AGE,
+          FULL_NAME:req.query.FULL_NAME,
           EMAIL:req.query.EMAIL,
-          PASS:req.query.PASS
+          PASSWORD:req.query.PASSWORD
        };
 
     async.waterfall([
         function(callback){
-            connection.query('SELECT EMAIL FROM CUSTOMER WHERE EMAIL = ?',[response.EMAIL], function (err, result) {
+            connection.query('select EMAIL from CUSTOMER where EMAIL = ?',[response.EMAIL], function (err, result) {
                 if (err) throw err;
                 
                 callback(null,result)
@@ -30,11 +29,11 @@ module.exports.async= (async)=>{
         },
         function(callback)
         {
-            var query = `INSERT INTO CUSTOMER values("${response.FIRST_NAME}",
+            var query = `insert into CUSTOMER values("${response.FIRST_NAME}",
             "${response.LAST_NAME}",
-            "${response.AGE}",
+            "${response.FIRST_NAME}",
             "${response.EMAIL}",
-            "${response.PASS}")`;
+            "${response.PASSWORD}")`;
             let email=`${response.EMAIL}`
             connection.query( query ,function (err, email) {
               if (err) throw err;

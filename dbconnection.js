@@ -3,8 +3,9 @@ module.exports= (mysql,async)=>{
         global.connection= mysql.createConnection({
         host     : 'localhost', 
         user     : 'root', 
-        password : 'root', 
-        database : 'testdb' 
+        password : 'qwerty', 
+        database : 'nodejs',
+        port : 3306
       })
       connection.connect(function(err) {
         if (err) throw err
