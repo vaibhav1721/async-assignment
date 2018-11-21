@@ -2,7 +2,7 @@ module.exports.async= (async)=>{
 
     exports.update=function(req,res){
         console.log('hello')
-        var  response = {
+        let response = {
           FIRST_NAME:req.query.FIRST_NAME,
           LAST_NAME:req.query.LAST_NAME,
           FULL_NAME:req.query.FULL_NAME,

@@ -1,5 +1,5 @@
 
-var Promise = require('bluebird');
+let Promise = require('bluebird');
 
 exports.delete = delete;
 

@@ -1,7 +1,7 @@
 module.exports.async= (async)=>{
     exports.login=function(req,res){
       console.log('hello')
-      var  response = {
+      let  response = {
         EMAIL:req.query.EMAIL,
         PASSWORD:req.query.PASSWORD
      };
