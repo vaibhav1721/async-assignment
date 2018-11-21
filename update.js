@@ -22,7 +22,6 @@ module.exports.async= (async)=>{
         {
             connection.query('select * from CUSTOMER where EMAIL = ? ',[response.EMAIL], function (err, result) {
                 if (err) throw err;
-                
             })
             callback(null,result)
         }
