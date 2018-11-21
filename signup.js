@@ -53,7 +53,7 @@ module.exports.async= (async)=>{
         }
       ],
       function(err,result){
-        if(err){console.log(err)}
+        if(err){res.send("Some Error Occured", err)}
         else{console.log(result);res.end()} 
     })
 }

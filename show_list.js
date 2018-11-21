@@ -20,7 +20,7 @@ exports.list=function(req,res){
   }
 ],
   function(err,result){
-      if(err){console.log(err)}
+      if(err){res.send("Some Error Occured", err)}
       else{//console.log(result);
       res.send(result);
      console.log('All Rows Printed')} 

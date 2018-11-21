@@ -20,7 +20,6 @@ function deleteUser(email){
     return new Promise((resolve, reject)=>{
         connection.query('delete from CUSTOMER where EMAIL = ? ',[email], function (err, result) {
             if(err){
-                console.log("err", err);
                 reject(err);
             }
             resolve(result)

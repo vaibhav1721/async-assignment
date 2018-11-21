@@ -33,7 +33,7 @@ module.exports.async= (async)=>{
     }
      ],
      function(err,result){
-        if(err){console.log(err)}
+        if(err){res.send(err)}
        else{ res.send(result);res.end();} 
      });  
     }
